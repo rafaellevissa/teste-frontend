@@ -24,7 +24,7 @@ export default function Navbar({ onSearchChange, onLocationClick }: Props) {
   return (
     <Container component="nav">
       <Grid container spacing={2} alignItems="center">
-        <Grid item>
+        <Grid item xs={10}>
           <SearchInput
             placeholder="City"
             onChange={handleSearchInputChange}
@@ -32,7 +32,7 @@ export default function Navbar({ onSearchChange, onLocationClick }: Props) {
             onBlur={handleSearchInputBlur}
           />
         </Grid>
-        <Grid item>
+        <Grid item xs={2}>
           <IconButton color="primary" onClick={handleLocationClick}>
             <MyLocationIcon />
           </IconButton>

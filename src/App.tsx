@@ -1,4 +1,4 @@
-import { useState } from "react";
+import Loading from "./components/Loading/Loading";
 import Navbar from "./components/Navbar/Navbar";
 import Weather from "./components/Weather/Weather";
 import useWeather from "./hook/use-weather";
@@ -20,7 +20,7 @@ export default function App() {
   };
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <Loading />;
   }
 
   return (

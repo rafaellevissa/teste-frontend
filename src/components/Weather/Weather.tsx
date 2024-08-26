@@ -37,12 +37,19 @@ export default function Weather({ weatherData }: Props) {
       alignItems="center"
       className={styles.container}
     >
-      <Grid item>
+      <Grid
+        item
+        container
+        direction="column"
+        justifyContent="center"
+        alignItems="center"
+      >
         <Typography variant="h1" className={styles.temperature}>
           {unit === "C"
             ? `${weatherData?.temperature ?? 0}°C`
             : `${(weatherData?.temperature ?? 0 * 9) / 5 + 32}°F`}
         </Typography>
+        <Typography variant="h3">{weatherData.cityName}</Typography>
       </Grid>
 
       <Grid item className={styles.unitSelector}>
@@ -78,7 +85,7 @@ export default function Weather({ weatherData }: Props) {
         <Grid item className={styles.weatherInfoItem}>
           <IconButton className={styles.weatherIconButton}>
             <ThunderstormIcon fontSize="large" />
-            <span>{weatherData?.condition}%</span>
+            <span>{weatherData?.condition}</span>
           </IconButton>
         </Grid>
 
