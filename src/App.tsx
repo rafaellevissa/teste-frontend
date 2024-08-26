@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Loading from "./components/Loading/Loading";
 import Navbar from "./components/Navbar/Navbar";
 import Weather from "./components/Weather/Weather";
@@ -9,7 +10,16 @@ export default function App() {
     loading,
     loadWeatherByCityName,
     loadWeatherByCurrentLocation,
+    error,
   } = useWeather();
+
+  useEffect(() => {
+    if (error) {
+      alert(
+        "The city could not be found or something went wrong while trying to fetch the city's weather information."
+      );
+    }
+  }, [error]);
 
   const handleSearch = (value: string) => {
     loadWeatherByCityName(value);
