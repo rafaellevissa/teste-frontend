@@ -1,0 +1,33 @@
+.container {
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.temperature {
+  font-size: 8rem;
+}
+
+.unitSelector {
+  margin-top: 20px;
+}
+
+.weatherInfo {
+  margin-top: 20px;
+}
+
+.weatherInfoItem {
+  text-align: "center";
+}
+
+.weatherIconButton {
+  border-radius: 50%;
+  border: 0.5px solid rgba(0, 0, 0, 0.3);
+  width: 150px;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  text-align: center;
+}
