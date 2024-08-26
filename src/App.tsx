@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import Loading from "./components/Loading/Loading";
 import Navbar from "./components/Navbar/Navbar";
 import Weather from "./components/Weather/Weather";
-import useWeather from "./hook/use-weather";
+import useWeather from "./hooks/use-weather";
 
 export default function App() {
   const {
