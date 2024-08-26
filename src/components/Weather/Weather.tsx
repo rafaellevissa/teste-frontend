@@ -16,8 +16,7 @@ import useWeather from "../../hook/use-weather";
 
 export default function Weather() {
   const [unit, setUnit] = useState<"C" | "F">("C");
-  const [temperature, setTemperature] = useState<number>(100);
-  const { weatherData, fetchWeatherByCityName, loading } = useWeather();
+  const { weatherData, loading } = useWeather();
 
   const handleUnitChange = (
     event: React.MouseEvent<HTMLElement>,

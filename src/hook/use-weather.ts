@@ -81,6 +81,7 @@ export default function useWeather() {
 
   useEffect(() => {
     fetchWeatherByCurrentLocation();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return {
