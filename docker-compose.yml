@@ -1,0 +1,6 @@
+services:
+  client:
+    build: .
+    container_name: amicci-client
+    ports:
+      - 3000:3000
