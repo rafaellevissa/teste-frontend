@@ -37,7 +37,22 @@ export default function useWeather() {
     };
   };
 
-  const fetchWeatherByCurrentLocation = async () => {
+  const loadWeatherByCityName = async (cityName: string) => {
+    try {
+      setLoading(true);
+      setError(null);
+
+      const weather = await fetchWeatherByCityName(cityName);
+
+      setWeatherData(weather);
+    } catch (err: any) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const loadWeatherByCurrentLocation = async () => {
     try {
       setLoading(true);
       setError(null);
@@ -47,7 +62,7 @@ export default function useWeather() {
 
       const weather = await fetchWeatherData(latitude, longitude);
 
-      setWeatherData({ ...weather });
+      setWeatherData(weather);
     } catch (err: any) {
       setError(err.message);
     } finally {
@@ -80,13 +95,13 @@ export default function useWeather() {
   };
 
   useEffect(() => {
-    fetchWeatherByCurrentLocation();
+    loadWeatherByCurrentLocation();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return {
-    fetchWeatherByCityName,
-    fetchWeatherByCurrentLocation,
+    loadWeatherByCurrentLocation,
+    loadWeatherByCityName,
     weatherData,
     loading,
     error,

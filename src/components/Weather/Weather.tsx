@@ -12,11 +12,13 @@ import {
 } from "@mui/material";
 import { useState } from "react";
 import styles from "./Weather.module.scss";
-import useWeather from "../../hook/use-weather";
 
-export default function Weather() {
+type Props = {
+  weatherData: any;
+};
+
+export default function Weather({ weatherData }: Props) {
   const [unit, setUnit] = useState<"C" | "F">("C");
-  const { weatherData, loading } = useWeather();
 
   const handleUnitChange = (
     event: React.MouseEvent<HTMLElement>,
@@ -26,10 +28,6 @@ export default function Weather() {
       setUnit(newUnit);
     }
   };
-
-  if (loading) {
-    return <div>Loading...</div>;
-  }
 
   return (
     <Grid
