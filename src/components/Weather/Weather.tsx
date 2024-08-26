@@ -36,6 +36,7 @@ export default function Weather({ weatherData }: Props) {
       justifyContent="center"
       alignItems="center"
       className={styles.container}
+      data-testid="weather-container"
     >
       <Grid
         item
@@ -44,15 +45,21 @@ export default function Weather({ weatherData }: Props) {
         justifyContent="center"
         alignItems="center"
       >
-        <Typography variant="h1" className={styles.temperature}>
+        <Typography
+          variant="h1"
+          className={styles.temperature}
+          data-testid="temperature"
+        >
           {unit === "C"
             ? `${weatherData?.temperature ?? 0}°C`
-            : `${(weatherData?.temperature ?? 0 * 9) / 5 + 32}°F`}
+            : `${((weatherData?.temperature ?? 0) * 9) / 5 + 32}°F`}
         </Typography>
-        <Typography variant="h3">{weatherData.cityName}</Typography>
+        <Typography variant="h3" data-testid="city-name">
+          {weatherData.cityName}
+        </Typography>
       </Grid>
 
-      <Grid item className={styles.unitSelector}>
+      <Grid item className={styles.unitSelector} data-testid="unit-selector">
         <ToggleButtonGroup
           value={unit}
           exclusive
@@ -74,23 +81,33 @@ export default function Weather({ weatherData }: Props) {
         justifyContent="center"
         spacing={4}
         className={styles.weatherInfo}
+        data-testid="weather-info"
       >
         <Grid item className={styles.weatherInfoItem}>
-          <IconButton className={styles.weatherIconButton}>
+          <IconButton
+            className={styles.weatherIconButton}
+            data-testid="wind-speed"
+          >
             <AirIcon fontSize="large" />
             <span>{weatherData?.windSpeed} km/h</span>
           </IconButton>
         </Grid>
 
         <Grid item className={styles.weatherInfoItem}>
-          <IconButton className={styles.weatherIconButton}>
+          <IconButton
+            className={styles.weatherIconButton}
+            data-testid="condition"
+          >
             <ThunderstormIcon fontSize="large" />
             <span>{weatherData?.condition}</span>
           </IconButton>
         </Grid>
 
         <Grid item className={styles.weatherInfoItem}>
-          <IconButton className={styles.weatherIconButton}>
+          <IconButton
+            className={styles.weatherIconButton}
+            data-testid="humidity"
+          >
             <WaterDropIcon fontSize="large" />
             <span>{weatherData?.humidity}%</span>
           </IconButton>
