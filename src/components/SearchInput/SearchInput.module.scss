@@ -1,0 +1,17 @@
+.searchInput {
+  border-radius: 25px;
+  background-color: #f0f0f0;
+  width: 100%;
+
+  fieldset {
+    border: none; 
+  }
+
+  &:hover fieldset {
+    border: none; 
+  }
+
+  &.Mui-focused fieldset {
+    border: none; 
+  } 
+}
