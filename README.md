@@ -35,3 +35,6 @@ npm install
 ```bash
 npm run test
 ```
+
+Deploy feito em: https://dwxzajdn0dlqs.cloudfront.net/
+Documentação da api: http://3.85.33.55:8000/swagger/
